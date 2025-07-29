@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Styles/login.css">
+    <title>Login</title>
+</head>
+<h1 class="titulo">ButterflyMine</h1>
+<div class="login-container">
+<body>
+        <div class="login-content">
+            <div class="wrapper">
+                <div class="card-switch">
+                    <label class="switch">
+                       <input class="toggle" type="checkbox">
+                       <span class="slider"></span>
+                       <span class="card-side"></span>
+                       <div class="flip-card__inner">
+                          <!-- Formulario de inicio de sesión -->
+                          <div class="flip-card__front">
+                             <div class="title">Log in</div>
+                             <form class="flip-card__form">
+                                <input type="email" placeholder="Email" name="email" class="flip-card__input" required>
+                                <input type="password" placeholder="Password" name="password" class="flip-card__input" required>
+                                <button type="submit" class="flip-card__btn">Let`s go!</button>
+                             </form>
+                          </div>
+                          <!-- Formulario de registro -->
+                          <div class="flip-card__back">
+                             <div class="title">Sign up</div>
+                             <form class="flip-card__form">
+                                <input type="name" placeholder="Name" name="name" class="flip-card__input" required>
+                                <input type="email" placeholder="Email" name="email" class="flip-card__input" required>
+                                <input type="password" placeholder="Password" name="password" class="flip-card__input" required>
+                                <button type="submit" class="flip-card__btn">Confirm!</button>
+                             </form>
+                          </div>
+                       </div>
+                    </label>
+                </div>   
+            </div>
+        </div>
+    </div>
+    <script>
+        // Validación para el formulario de inicio de sesión (Login)
+        document.querySelector('.flip-card__front form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('.flip-card__front input[name="email"]').value;
+            const password = document.querySelector('.flip-card__front input[name="password"]').value;
+            const storedUser = localStorage.getItem('user');
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                if (user.email === email && user.password === password) {
+                    alert('Login successful!');
+                    window.location.href = 'MenuPrincipal.html';
+                } else {
+                    alert('Invalid credentials. Please try again.');
+                }
+            } else {
+                alert('No user found. Please sign up first.');
+            }
+        });
+
+        // Validación para el formulario de registro (Sign Up)
+        document.querySelector('.flip-card__back form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.querySelector('.flip-card__back input[name="name"]').value;
+            const email = document.querySelector('.flip-card__back input[name="email"]').value;
+            const password = document.querySelector('.flip-card__back input[name="password"]').value;
+            const storedUser = localStorage.getItem('user');
+            if (storedUser) {
+                alert('User already registered. Please log in.');
+            } else {
+                const newUser = { name, email, password };
+                localStorage.setItem('user', JSON.stringify(newUser));
+                alert('Sign up successful! You can now log in.');
+                document.querySelector('.toggle').checked = false;
+            }
+        });
+    </script>
+</body>
+</html>
