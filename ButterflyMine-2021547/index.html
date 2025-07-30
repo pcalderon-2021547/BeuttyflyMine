@@ -52,13 +52,13 @@
             if (storedUser) {
                 const user = JSON.parse(storedUser);
                 if (user.email === email && user.password === password) {
-                    alert('Login successful!');
+                    alert('Inicio sesion exitoso!');
                     window.location.href = 'MenuPrincipal.html';
                 } else {
-                    alert('Invalid credentials. Please try again.');
+                    alert('Credenciales invalidas.');
                 }
             } else {
-                alert('No user found. Please sign up first.');
+                alert('Porfavor cree un usuario primero.');
             }
         });
 
@@ -74,7 +74,7 @@
             } else {
                 const newUser = { name, email, password };
                 localStorage.setItem('user', JSON.stringify(newUser));
-                alert('Sign up successful! You can now log in.');
+                alert('Creaste tu cuenta! ahora iniciemos sesion.');
                 document.querySelector('.toggle').checked = false;
             }
         });
