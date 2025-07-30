@@ -11,10 +11,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;  /* Centrar el título arriba y el formulario abajo */
+    flex-direction: column;  
     height: 100vh;
     width: 100%;
-    background-image: url('../Images/Banner.png');  /* Agregar la ruta de tu imagen */
+    background-image: url('../Images/Banner.png'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -24,26 +24,17 @@
 .titulo {
     font-size: 6rem;
     font-family: 'Playfair Display', serif;
-    
-    /* Remove any conflicting margins if they were still there */
     margin: 0; 
-    
-    /* Key properties for fixed positioning */
     position: fixed;
-    top: 0; /* Positions it 0px from the top of the viewport */
-    left: 0; /* Positions it 0px from the left of the viewport */
-    width: 100%; /* Makes it span the full width of the viewport */
-    
+    top: 0; 
+    left: 0; 
+    width: 100%; 
     text-transform: uppercase;
     font-weight: 100;
     letter-spacing: 5px;
     color: #fefefe;
     text-align: center;
-    
-    /* Add a background color if you want it to stand out, otherwise content might scroll under it */
-    background-color: rgba(0, 0, 0, 0); /* Example: semi-transparent black */
-    
-    /* You might need a z-index to ensure it stays on top of other content */
+    background-color: rgba(0, 0, 0, 0); 
     z-index: 1000; 
 }
 
@@ -56,9 +47,6 @@
     --bg-color: #111;
     --bg-color-alt: #7e7e7e;
     --main-color: #fefefe;
-      /* display: flex; */
-      /* flex-direction: column; */
-      /* align-items: center; */
   }
   /* switch card */
   .switch {
@@ -247,7 +235,6 @@
     cursor: pointer;
   } 
 
-/* Responsividad para pantallas pequeñas */
 @media (max-width: 768px) {
     .titulo {
         font-size: 2rem;
@@ -265,7 +252,6 @@
         font-size: 16px;
     }
 
-    /* Ajustar la imagen de fondo para pantallas más pequeñas */
     .login-container {
         background-size: cover;
     }

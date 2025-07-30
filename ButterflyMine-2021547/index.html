@@ -70,7 +70,7 @@
             const password = document.querySelector('.flip-card__back input[name="password"]').value;
             const storedUser = localStorage.getItem('user');
             if (storedUser) {
-                alert('User already registered. Please log in.');
+                alert('Usuario ya registrado Porfavor inicie sesion');
             } else {
                 const newUser = { name, email, password };
                 localStorage.setItem('user', JSON.stringify(newUser));
